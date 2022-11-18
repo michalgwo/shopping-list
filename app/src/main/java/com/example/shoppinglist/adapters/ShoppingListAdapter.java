@@ -31,7 +31,6 @@ public class ShoppingListAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, final int position) {
         if (holder instanceof RvViewHolder) {
             final RvViewHolder itemViewHolder = (RvViewHolder) holder;
-
             ShoppingListItem item = itemList.get(position);
             itemViewHolder.tvListRow.setText(item.getName());
             itemViewHolder.tvListRowTime.setText(item.getRelativeTime());

@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             viewModel.addItem(new ShoppingListItem(name, System.currentTimeMillis()));
+            etNewItem.setText("");
         });
     }
 
