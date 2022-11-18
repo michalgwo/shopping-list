@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+        android:id="@+id/rvItemList"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -15,11 +15,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
+        app:layout_constraintTop_toBottomOf="@+id/etNewItem"
         app:layout_constraintVertical_bias="0.0" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/etNewItem"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
@@ -29,12 +29,12 @@
         android:inputType="textPersonName"
         android:minHeight="48dp"
         android:textColorHint="#757575"
-        app:layout_constraintEnd_toStartOf="@+id/button"
+        app:layout_constraintEnd_toStartOf="@+id/bAdd"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/bAdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
