@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -38,6 +39,16 @@ public class MainActivity extends AppCompatActivity {
         init();
         initViewModel();
         initRecyclerView();
+
+        bAdd.setOnClickListener(view -> {
+            String name = etNewItem.getText().toString().trim();
+
+            if (name.equals("")) {
+                return;
+            }
+
+            viewModel.addItem(new ShoppingListItem(name, System.currentTimeMillis()));
+        });
     }
 
     private void initRecyclerView() {

@@ -25,4 +25,11 @@ public class MainActivityViewModel extends ViewModel {
     public LiveData<List<ShoppingListItem>> getItems() {
         return items;
     }
+
+    public void addItem(ShoppingListItem item) {
+        List<ShoppingListItem> itemsList = items.getValue();
+        assert itemsList != null;
+        itemsList.add(item);
+        items.postValue(itemsList);
+    }
 }
