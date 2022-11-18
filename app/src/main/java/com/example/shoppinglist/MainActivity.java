@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void initViewModel() {
         viewModel = new ViewModelProvider(this).get(MainActivityViewModel.class);
+        viewModel.init();
         viewModel.getItems().observe(this, shoppingListItems -> {
             if (adapter != null) {
                 adapter.notifyDataSetChanged();
