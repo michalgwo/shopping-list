@@ -4,11 +4,11 @@ import androidx.lifecycle.MutableLiveData;
 
 import com.example.shoppinglist.models.ShoppingListItem;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ShoppingListRepo {
     public static ShoppingListRepo instance;
-    private MutableLiveData<List<ShoppingListItem>> shoppingList;
 
     public static ShoppingListRepo getInstance() {
         if (instance == null) {
@@ -18,7 +18,9 @@ public class ShoppingListRepo {
         return instance;
     }
 
-    public MutableLiveData<List<ShoppingListItem>> getShoppingList() {
-        return shoppingList;
+    public MutableLiveData<List<ShoppingListItem>> createShoppingList() {
+        MutableLiveData<List<ShoppingListItem>> data = new MutableLiveData<>();
+        data.setValue(new ArrayList<>());
+        return data;
     }
 }

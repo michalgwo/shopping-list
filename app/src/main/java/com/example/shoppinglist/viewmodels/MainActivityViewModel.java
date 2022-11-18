@@ -19,7 +19,7 @@ public class MainActivityViewModel extends ViewModel {
         }
 
         repo = ShoppingListRepo.getInstance();
-        items = repo.getShoppingList();
+        items = repo.createShoppingList();
     }
 
     public LiveData<List<ShoppingListItem>> getItems() {

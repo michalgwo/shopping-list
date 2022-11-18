@@ -1,22 +1,17 @@
 package com.example.shoppinglist;
 
+import android.os.Bundle;
+import android.widget.Button;
+import android.widget.EditText;
+
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-
 import com.example.shoppinglist.adapters.ShoppingListAdapter;
 import com.example.shoppinglist.models.ShoppingListItem;
 import com.example.shoppinglist.viewmodels.MainActivityViewModel;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     private Button bAdd;
