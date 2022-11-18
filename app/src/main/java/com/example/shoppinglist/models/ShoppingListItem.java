@@ -1,5 +1,7 @@
 package com.example.shoppinglist.models;
 
+import android.text.format.DateUtils;
+
 public class ShoppingListItem {
     private String name;
     private long time;
@@ -23,5 +25,9 @@ public class ShoppingListItem {
 
     public void setTime(long time) {
         this.time = time;
+    }
+
+    public CharSequence getRelativeTime() {
+        return DateUtils.getRelativeTimeSpanString(time, System.currentTimeMillis(), DateUtils.MINUTE_IN_MILLIS, DateUtils.FORMAT_ABBREV_ALL);
     }
 }
