@@ -32,4 +32,11 @@ public class MainActivityViewModel extends ViewModel {
         itemsList.add(item);
         items.postValue(itemsList);
     }
+
+    public void removeItem(ShoppingListItem item) {
+        List<ShoppingListItem> itemsList = items.getValue();
+        assert itemsList != null;
+        itemsList.remove(item);
+        items.postValue(itemsList);
+    }
 }

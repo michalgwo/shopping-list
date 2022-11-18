@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initRecyclerView() {
-        adapter = new ShoppingListAdapter(viewModel.getItems().getValue());
+        adapter = new ShoppingListAdapter(viewModel.getItems().getValue(), listener);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         rvItemList.setLayoutManager(layoutManager);
         rvItemList.setAdapter(adapter);
@@ -63,4 +63,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+    private final ShoppingListAdapter.OnShoppingListClickedListener listener = new ShoppingListAdapter.OnShoppingListClickedListener() {
+        @Override
+        public void onItemClicked(ShoppingListItem item) {
+            if (item != null) {
+                viewModel.removeItem(item);
+            }
+        }
+    };
 }

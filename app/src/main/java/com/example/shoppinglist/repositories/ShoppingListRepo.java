@@ -9,6 +9,7 @@ import java.util.List;
 
 public class ShoppingListRepo {
     public static ShoppingListRepo instance;
+    private ArrayList<ShoppingListItem> data;
 
     public static ShoppingListRepo getInstance() {
         if (instance == null) {
@@ -19,8 +20,12 @@ public class ShoppingListRepo {
     }
 
     public MutableLiveData<List<ShoppingListItem>> createShoppingList() {
-        MutableLiveData<List<ShoppingListItem>> data = new MutableLiveData<>();
-        data.setValue(new ArrayList<>());
-        return data;
+        if (data == null) {
+            data = new ArrayList<>();
+        }
+
+        MutableLiveData<List<ShoppingListItem>> mutableLiveData = new MutableLiveData<>();
+        mutableLiveData.setValue(data);
+        return mutableLiveData;
     }
 }
